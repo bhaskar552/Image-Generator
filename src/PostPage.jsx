@@ -143,45 +143,48 @@ const PostPage = () => {
 
           {/* Preview Section */}
           <div>
-  <h2 className="text-2xl font-bold mb-4">Preview</h2>
-  <div
-    id="post"
-    className="p-6 rounded-lg shadow-lg"
-    style={{
-      backgroundColor: bgColor,
-      borderColor: borderColor,
-      borderWidth: '8px',
-      borderStyle: 'solid',
-      color: textColor,
-      fontFamily: fontFamily,
-      width: '600px', 
-      minHeight: '400px', 
-    }}
-  >
-    <div className="flex items-center mb-4">
-      <img src={logo} alt="Logo" className="rounded-full w-16 h-16 mr-4" />
-      <div>
-        <h1 className="text-xl font-bold">{title || 'Generated Title'}</h1>
-        <p className="text-sm opacity-75">{date}</p>
-      </div>
-    </div>
-    <p className="mb-4">
-      {content
-        ? content.length > 100
-          ? `${content.substring(0, 100)}...`
-          : content
-        : 'Generated content will appear here.'}
-    </p>
-    {image && (
-      <div className="w-full h-64 overflow-hidden rounded-lg">
-        <img
-          src={image}
-          alt="Post"
-          className="w-full h-full object-contain"
-        />
-      </div>
-    )}
-  </div>
+            <h2 className="text-2xl font-bold mb-4">Preview</h2>
+            <div
+              id="post"
+              className="p-6 rounded-lg shadow-lg"
+              style={{
+                backgroundColor: bgColor,
+                borderColor: borderColor,
+                borderWidth: '8px',
+                borderStyle: 'solid',
+                color: textColor,
+                fontFamily: fontFamily,
+                width: '600px', 
+                minHeight: '400px', 
+              }}
+            >
+              <div className="flex items-center mb-4">
+                <img src={logo} alt="Logo" className="rounded-full w-16 h-16 mr-4" />
+                <div>
+                  <h1 className="text-xl font-bold">{title || 'Generated Title'}</h1>
+                  <p className="text-sm opacity-75">{date}</p>
+                </div>
+              </div>
+              
+              <p className="mb-4">
+                {content
+                  ? content.length > 100
+                    ? `${content.substring(0, 100)}...`
+                    : content
+                  : 'Generated content will appear here.'}
+              </p>
+                <hr style={{ borderColor: borderColor, borderWidth: '1px', margin: '16px 0' }} />
+
+              {image && (
+                <div className="w-full h-64 overflow-hidden rounded-lg mb-4">
+                  <img
+                    src={image}
+                    alt="Post"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+            </div>
 
             {ogImageUrl && (
               <div className="mt-6">
